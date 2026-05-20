@@ -1,8 +1,8 @@
-import { Raleway } from "next/font/google";
+import { Mulish } from "next/font/google";
 import "./globals.css";
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+const mulish = Mulish({
+  variable: "--font-mulish",
   subsets: ["latin"],
 });
 
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${raleway.variable} h-full antialiased`}
+      className={`${mulish.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

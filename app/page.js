@@ -1,9 +1,69 @@
+'use client';
+
+import React, { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Car,
+  CalendarDays,
+  MapPin,
+  Star,
+  ShieldCheck,
+  Clock,
+  CreditCard,
+  Phone,
+  Mail,
+  Menu,
+  X,
+  Fuel,
+  Gauge,
+  Users,
+  Search,
+  ChevronRight,
+  CheckCircle2,
+  Sparkles,
+  Plane,
+  BriefcaseBusiness,
+  HeartHandshake,
+  MessageCircle,
+  ArrowRight,
+  KeyRound,
+} from "lucide-react";
+
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import MainComponent from "./Components/MainComponent";
+import Fleet from "./Components/Fleet";
+import Booking from "./Components/Booking";
+import Details from "./Components/Details";
+import Services from "./Components/Services";
+import About from "./Components/About";
+import FAQ from "./Components/FAQ";
+import Contact from "./Components/Contact";
+import Login from "./Components/Login";
+
+function PageShell({ children }) {
+  return <main className="min-h-screen bg-[#07090f] text-white">{children}</main>;
+}
+
 export default function Home() {
+  const [active, setActive] = useState("MainComponent");
+  const view = useMemo(() => {
+    if (active === "MainComponent") return <MainComponent setActive={setActive} />;
+    if (active === "Fleet") return <Fleet setActive={setActive} />;
+    if (active === "Booking") return <Booking />;
+    if (active === "Details") return <Details />;
+    if (active === "Services") return <Services />;
+    if (active === "About") return <About />;
+    if (active === "FAQ") return <FAQ />;
+    if (active === "Contact") return <Contact />;
+    return <Login />;
+  }, [active]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white sm:items-start">
-       <p className="text-[#ee3355] font-medium">Wait! Is this a test?</p>
-      </main>
-    </div>
+    <PageShell>
+      <Header active={active} setActive={setActive} />
+      {view}
+      <Footer setActive={setActive} />
+    </PageShell>
   );
 }
