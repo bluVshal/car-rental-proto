@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import SectionTitle from './SectionTitle';
 
 const FAQ = () => {
     const qs = ["What documents do I need?", "Can I cancel my booking?", "Is insurance included?", "Do you offer airport delivery?", "Can companies open monthly accounts?"];

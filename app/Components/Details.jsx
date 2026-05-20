@@ -1,4 +1,6 @@
 import React from 'react'
+import { cars } from '../Data';
+import { CheckCircle2 } from "lucide-react";
 
 const Details = () => {
     const car = cars[0];
