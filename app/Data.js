@@ -68,4 +68,4 @@ export const fade = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
 };
 
-
+export const carCategories = ["Economy", "Compact", "Midsize", "SUV", "Luxury", "Sports"];
