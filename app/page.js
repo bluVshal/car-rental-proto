@@ -1,34 +1,6 @@
 'use client';
 
 import React, { useMemo, useState } from "react";
-import { motion } from "framer-motion";
-import {
-  Car,
-  CalendarDays,
-  MapPin,
-  Star,
-  ShieldCheck,
-  Clock,
-  CreditCard,
-  Phone,
-  Mail,
-  Menu,
-  X,
-  Fuel,
-  Gauge,
-  Users,
-  Search,
-  ChevronRight,
-  CheckCircle2,
-  Sparkles,
-  Plane,
-  BriefcaseBusiness,
-  HeartHandshake,
-  MessageCircle,
-  ArrowRight,
-  KeyRound,
-} from "lucide-react";
-
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import MainComponent from "./Components/MainComponent";

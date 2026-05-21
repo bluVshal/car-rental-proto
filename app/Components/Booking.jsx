@@ -1,6 +1,10 @@
 import React from 'react'
+import { Calendar } from 'primereact/calendar';
 
 const Booking = () => {
+    const [pickupDate, setPickupDate] = React.useState(null);
+    const [returnDate, setReturnDate] = React.useState(null);
+
     return (
         <section className="mx-auto grid max-w-7xl gap-8 px-5 py-20 lg:grid-cols-[.9fr_1.1fr]">
             <div className="overflow-hidden rounded-[2rem]">
@@ -10,12 +14,30 @@ const Booking = () => {
                 <p className="mb-3 text-sm font-bold uppercase tracking-[.3em] text-lime-300">Booking</p>
                 <h2 className="text-4xl font-black">Reserve your car in minutes</h2>
                 <div className="mt-8 grid gap-4 md:grid-cols-2">
-                    {["Pick-up Location", "Return Location", "Pick-up Date", "Return Date", "Car Category", "Driver Age"].map((label) => (
-                        <label key={label} className="grid gap-2 text-sm text-white/60">
-                            {label}
-                            <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-white/40">Select {label.toLowerCase()}</div>
-                        </label>
-                    ))}
+                    <label className="grid gap-2 text-sm text-white/60">
+                        Pickup Location
+                        <input type="text" placeholder="Enter pickup location" className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-white/40" />
+                    </label>
+                    <label className="grid gap-2 text-sm text-white/60">
+                        Return Location
+                        <input type="text" placeholder="Enter return location" className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-white/40" />
+                    </label>
+                    <label className="grid gap-2 text-sm text-white/60">
+                        Pickup Date
+                        <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-white/40"><Calendar value={pickupDate} onChange={(e) => setPickupDate(e.value)} /></div>
+                    </label>
+                    <label className="grid gap-2 text-sm text-white/60">
+                        Return Date
+                        <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-white/40"><Calendar value={returnDate} onChange={(e) => setReturnDate(e.value)} /></div>
+                    </label>                    
+                    <label className="grid gap-2 text-sm text-white/60">
+                        Car Category
+                        <input type="text" placeholder="Enter car category" className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-white/40" />
+                    </label>
+                    <label className="grid gap-2 text-sm text-white/60">
+                        Driver Age
+                        <input type="number" max={150} placeholder="Enter driver age" className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-white/40" />
+                    </label>
                 </div>
                 <div className="mt-6 rounded-2xl border border-lime-300/20 bg-lime-300/10 p-5 text-lime-100">
                     <p className="font-bold">Included: unlimited mileage, free cancellation, basic protection, and 24/7 support.</p>

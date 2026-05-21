@@ -1,4 +1,9 @@
 import { Mulish } from "next/font/google";
+import { PrimeReactProvider } from 'primereact/api';
+import "primereact/resources/themes/lara-light-cyan/theme.css"; // Choose your theme
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+
 import "./globals.css";
 
 const mulish = Mulish({
@@ -17,7 +22,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${mulish.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <PrimeReactProvider>
+          {children}
+        </PrimeReactProvider>
+      </body>
     </html>
   );
 }
